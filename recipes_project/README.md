@@ -1,12 +1,6 @@
 # Recipes Project (Django)
 
-A minimal CRUD app for Stage 2 demo.
-
-## Features
-- Single-table schema: `Recipe` with fields (name, country, prep/cook time, serves, spice 1–5, prep complexity 1–5)
-- Add / Edit / Delete recipes
-- Filter report by dynamic DB-driven country dropdown (no hard-coding), serves range, spice range, max prep/cook time
-- SQLite by default
+A minimal CRUD app for the 348 Project
 
 ## Quickstart
 ```bash
