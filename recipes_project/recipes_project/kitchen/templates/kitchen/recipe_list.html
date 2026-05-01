@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Recipes</h1>
+<p>
+  <a href="{% url 'recipes:bulk_spice' %}">Bulk bump spice by country</a>
+</p>
+<h3>Filter</h3>
+<form method="get">
+  <div class="row">
+    <div>{{ form.country.label_tag }} {{ form.country }}</div>
+    <div>{{ form.min_serves.label_tag }} {{ form.min_serves }}</div>
+    <div>{{ form.max_serves.label_tag }} {{ form.max_serves }}</div>
+    <div>{{ form.min_spice.label_tag }} {{ form.min_spice }}</div>
+    <div>{{ form.max_spice.label_tag }} {{ form.max_spice }}</div>
+    <div>{{ form.max_prep.label_tag }} {{ form.max_prep }}</div>
+    <div>{{ form.max_cook.label_tag }} {{ form.max_cook }}</div>
+  </div>
+  <p><button type="submit">Apply Filters</button>
+     <a href="{% url 'recipes:list' %}">Reset</a></p>
+</form>
+<h3>Report</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Country</th><th>Prep</th><th>Cook</th>
+      <th>Serves</th><th>Spice</th><th>Complexity</th><th>URL</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in recipes %}
+    <tr>
+      <td>{{ r.name }}</td>
+      <td>{{ r.country }}</td>
+      <td>{{ r.prep_time_min }} min</td>
+      <td>{{ r.cook_time_min }} min</td>
+      <td>{{ r.serves }}</td>
+      <td>{{ r.spice_level }}</td>
+      <td>{{ r.prep_complexity }}</td>
+      <td>
+        {% if r.source_url %}
+          <a href="{{ r.source_url }}" target="_blank" rel="noopener">Open</a>
+        {% else %}
+          —
+        {% endif %}
+      </td>
+      <td class="actions">
+        <a href="{% url 'recipes:edit' r.pk %}">Edit</a>
+        <a href="{% url 'recipes:delete' r.pk %}">Delete</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="9">No recipes found.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

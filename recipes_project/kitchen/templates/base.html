@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Recipes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 2rem; }
+    header a { margin-right: 1rem; }
+    form .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+    th, td { border: 1px solid #ddd; padding: .5rem; }
+    th { background: #f7f7f7; text-align: left; }
+    .actions a, .actions button { margin-right: .5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="{% url 'recipes:list' %}">All Recipes</a>
+    <a href="{% url 'recipes:add' %}">Add Recipe</a>
+  </header>
+  <hr>
+  {% block content %}{% endblock %}
+</body>
+</html>

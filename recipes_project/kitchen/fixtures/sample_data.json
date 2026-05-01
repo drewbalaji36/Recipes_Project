@@ -1,0 +1,54 @@
+[
+  {
+    "model": "kitchen.recipe",
+    "pk": 1,
+    "fields": {
+      "name": "Butter Chicken",
+      "country": "India",
+      "prep_time_min": 20,
+      "cook_time_min": 30,
+      "serves": 4,
+      "spice_level": 4,
+      "prep_complexity": 2
+    }
+  },
+  {
+    "model": "kitchen.recipe",
+    "pk": 2,
+    "fields": {
+      "name": "Spaghetti Carbonara",
+      "country": "Italy",
+      "prep_time_min": 10,
+      "cook_time_min": 15,
+      "serves": 2,
+      "spice_level": 1,
+      "prep_complexity": 2
+    }
+  },
+  {
+    "model": "kitchen.recipe",
+    "pk": 3,
+    "fields": {
+      "name": "Tacos al Pastor",
+      "country": "Mexico",
+      "prep_time_min": 25,
+      "cook_time_min": 20,
+      "serves": 3,
+      "spice_level": 3,
+      "prep_complexity": 3
+    }
+  },
+  {
+    "model": "kitchen.recipe",
+    "pk": 4,
+    "fields": {
+      "name": "Mapo Tofu",
+      "country": "China",
+      "prep_time_min": 15,
+      "cook_time_min": 12,
+      "serves": 4,
+      "spice_level": 5,
+      "prep_complexity": 2
+    }
+  }
+]
